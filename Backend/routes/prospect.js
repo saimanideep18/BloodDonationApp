@@ -1,12 +1,12 @@
 const express = require("express");
-const { createProspect, getAllProspects, updateDonor, getOneDonor, deleteDonor, getDonorsStats } = require("../controllers/donor");
+const { createProspect, getAllProspects, updateProspect, getOneProspect, deleteProspect} = require("../controllers/prospect");
 const router = express.Router();
 
 // ADD Prospect
 router.post("/",createProspect);
 
 // GET ALL ProspectS
-router.get("/",getAllProspect);
+router.get("/",getAllProspects);
 
 // UPDATE Prospect
 router.put("/:id",updateProspect);
@@ -16,9 +16,5 @@ router.get("/find/:id",getOneProspect);
 
 // DELETE Prospect 
 router.delete("/:id",deleteProspect);
-
-// Prospect STATS
-router.get("/stats",getProspectsStats);
-
 
 module.exports=router
